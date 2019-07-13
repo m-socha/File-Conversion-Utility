@@ -10,7 +10,7 @@ class Format(Enum):
 
 FORMAT_TO_REGEX = {
   Format.panasonic: re.compile('^\d{2}-\d{2}-\d{4}_\d{6}\.m2ts$'),
-  Format.phone: re.compile('^\d{8}_\d{6}P\.m2ts$'),
+  Format.phone: re.compile('^\d{8}_\d{6}p\.m2ts$'),
 }
 
 def print_usage():
@@ -26,7 +26,7 @@ def get_converted_filename(filename, src_format):
     day = filename[3:5]
     year = filename[6:10]
     time = filename[11:17]
-    return year + month + day + '_' + time + 'P.m2ts'
+    return year + month + day + '_' + time + 'p.m2ts'
   elif src_format == Format.phone:
     year = filename[:4]
     month = filename[4:6]
