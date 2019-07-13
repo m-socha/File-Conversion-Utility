@@ -51,3 +51,4 @@ converted_filenames = [get_converted_filename(f, src_format) for f in filtered_f
 for filename, converted_filename in zip(filtered_filenames, converted_filenames):
   rename(filename, converted_filename)
   print('%s --> %s' % (filename, converted_filename))
+print('Files converted: %d' % (len(filtered_filenames)))
